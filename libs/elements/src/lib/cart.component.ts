@@ -1,6 +1,8 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'shopping-cart',
   template: `
     <div class="container">
       <img
@@ -52,10 +54,10 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
         border-radius: 50%;
         box-shadow: 0 0 1px #333;
       }
-    `
+    `,
   ],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class CartComponent {
-  @Input() counter: number;
+  @Input() counter: number = 0;
 }

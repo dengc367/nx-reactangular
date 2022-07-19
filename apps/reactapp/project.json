@@ -2,6 +2,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/reactapp/src",
   "projectType": "application",
+  "prefix": "reactapp",
   "targets": {
     "build": {
       "executor": "@nrwl/web:webpack",
@@ -18,7 +19,7 @@
         "assets": ["apps/reactapp/src/favicon.ico", "apps/reactapp/src/assets"],
         "styles": ["apps/reactapp/src/styles.scss"],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "webpackConfig": "apps/reactapp/webpack.config"
       },
       "configurations": {
         "development": {

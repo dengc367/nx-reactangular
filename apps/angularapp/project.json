@@ -1,10 +1,10 @@
 {
   "projectType": "application",
   "sourceRoot": "apps/angularapp/src",
-  "prefix": "rectangular",
+  "prefix": "angularapp",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@angular-builders/custom-webpack:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/angularapp",
@@ -12,12 +12,16 @@
         "main": "apps/angularapp/src/main.ts",
         "polyfills": "apps/angularapp/src/polyfills.ts",
         "tsConfig": "apps/angularapp/tsconfig.app.json",
+        "customWebpackConfig": {
+          "path": "apps/angularapp/webpack.config.js"
+        },
         "assets": [
           "apps/angularapp/src/favicon.ico",
           "apps/angularapp/src/assets"
         ],
         "styles": ["apps/angularapp/src/styles.css"],
-        "scripts": []
+        "scripts": [],
+        "aot": true
       },
       "configurations": {
         "production": {
@@ -53,7 +57,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@angular-builders/custom-webpack:dev-server",
       "configurations": {
         "production": {
           "browserTarget": "angularapp:build:production"

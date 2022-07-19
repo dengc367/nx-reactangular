@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import '@rectangular/elements';
 
 @Component({
   selector: 'rectangular-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularapp';
+  counter = 0;
+  buy(type: any) {
+    this.counter++;
+  }
 }
